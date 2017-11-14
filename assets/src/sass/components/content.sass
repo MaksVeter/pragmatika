@@ -1,0 +1,204 @@
+$default-margin: 20px
+
+$content-h1-fz: 60px
+$content-h1-lh: 60px
+$content-h2-fz: 40px
+$content-h2-lh: 40px
+$content-h3-fz: 20px
+$content-h3-lh: 28px
+$content-h4-fz: 20px
+$content-h4-lh: 30px
+$content-h5-fz: $default-font-size
+$content-h5-lh: $default-line-height
+$content-h6-fz: 16px
+$content-h6-lh: 24px
+
+%h1    
+    font-family: $font-title
+    font-size: $content-h1-fz
+    line-height: $content-h1-lh
+    font-weight: 700
+    margin-bottom: $default-margin
+
+%h2        
+    font-family: $font-title
+    font-size: $content-h2-fz
+    line-height: $content-h2-lh
+    font-weight: 700
+    margin-bottom: $default-margin
+    
+%h3
+    font-family: $font-title
+    font-size: $content-h3-fz
+    line-height: $content-h3-lh
+    font-weight: 700 
+    margin-bottom: $default-margin
+
+%h4
+    font-family: $font-title
+    font-size: $content-h4-fz
+    line-height: $content-h4-lh
+    font-weight: 700
+    margin-bottom: $default-margin
+
+%h5       
+    font-family: $font-title
+    font-size: $content-h5-fz
+    line-height: $content-h5-lh
+    font-weight: 700
+    margin-bottom: $default-margin
+
+%h6        
+    font-family: $font-title
+    font-size: $content-h6-fz
+    line-height: $content-h6-lh
+    font-weight: 700
+    margin-bottom: $default-margin 
+
+%link
+    color: blue
+    text-decoration: underline
+    +hover
+        text-decoration: none
+
+
+
+    
+.content,
+#content,
+%content
+    word-break: break-word 
+    word-wrap: break-word
+    color: $text-clr
+    font-family: $font-content
+    font-size: $default-font-size
+    line-height: $default-line-height
+    +breakpoint-max(767)
+        font-size: $mobile-font-size
+        line-height: $mobile-line-height
+    h1   
+        @extend %h1
+    h2   
+        @extend %h2
+    h3   
+        @extend %h3
+    h4   
+        @extend %h4
+    h5   
+        @extend %h5
+    h6   
+        @extend %h6 
+
+    hr
+        display: block
+        height: 1px
+        background: $text-clr
+        border: none
+        outline: none
+        margin: $default-margin 0
+        padding: 0
+
+    p
+        margin-bottom: $default-margin
+
+    a
+        @extend %link
+
+    .excerpt
+        @extend %h4
+
+    ul
+        padding: 0
+        margin: 0
+        margin-bottom: $default-margin
+        li
+            position: relative
+            padding-left: 20px
+            &:before
+                content: '' 
+                display: block
+                width: 6px
+                height: 6px
+                border-radius: 50%
+                background-color: $text-clr
+                opacity: 0.5
+                position: absolute
+                left: 0
+                top: 10px
+    ol
+        padding: 0
+        margin: 0
+        margin-bottom: $default-margin
+        list-style-type: none
+        li
+            position: relative
+            padding-left: 20px
+            counter-increment: step-counter
+            &:before
+                content: counter(step-counter)'.'
+                display: block
+                color: $text-clr
+                opacity: 0.7
+                position: absolute
+                left: 0
+    i, 
+    em
+        font-style: italic
+    strong, 
+    b
+        font-weight: bold
+    sup, sub
+        font-size: 75%
+        line-height: 0
+        position: relative
+        vertical-align: baseline
+    sup
+        top: -0.5em
+    sub
+        bottom: -0.25em
+                
+    table
+        width: 100%
+        margin-bottom: $default-margin
+    th
+        font-weight: 700
+    td, th
+        padding: 5px 10px
+        border: 1px solid  #c4c4c4            
+
+    img
+        max-width: 100%
+        height: auto
+    dl
+        display: flex
+    dt
+        font-weight: 700
+    dd
+        margin-left: 20px
+    pre
+        white-space: normal
+
+    .alignnone
+        margin: $default-line-height 0 
+
+    .aligncenter
+        display: block
+        margin: $default-line-height auto
+        clear: both
+
+    .alignright
+        float: right
+        clear: right
+        margin: $default-line-height 0 $default-line-height $default-line-height
+
+    .alignleft
+        float: left
+        clear: left
+        margin: $default-line-height $default-line-height $default-line-height 0
+            
+    img.alignnone
+        display: inline-block
+        vertical-align: middle
+
+
+

@@ -1,0 +1,15 @@
+.admin-bar
+    #wpadminbar
+        opacity: .7
+        width: 32px
+        height: 32px
+        overflow: hidden
+        min-width: 0
+        transition: width 0s 1s, opacity .3s
+        +breakpoint-max(960)
+            display: none
+        &:hover
+            opacity: 1
+            width: 100%
+            overflow: visible
+            transition: width 0s 0s, opacity .3s

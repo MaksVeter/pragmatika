@@ -1,0 +1,30 @@
+.global-wrapper
+    min-width: 320px
+    box-sizing: border-box
+    position: relative
+    width: 100%
+    min-height: 100%
+    display: flex
+    flex-wrap: wrap
+    align-content: space-between
+
+.main-wrapper
+    box-sizing: border-box 
+    overflow: hidden  
+    width: 100%
+    position: relative        
+
+.wrapper
+    max-width: $wrapper-outer
+    margin: 0 auto
+    padding-left: $wrapper-padding
+    padding-right: $wrapper-padding
+    box-sizing: border-box
+
+#content
+    @extend .wrapper
+    padding-top: 40px
+    padding-bottom: 40px
+    +breakpoint-max(767)
+        padding-top: 20px
+        padding-bottom: 20px
